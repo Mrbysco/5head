@@ -2,7 +2,6 @@ package com.mrbysco.fivehead.mixin;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mrbysco.fivehead.FiveHead;
-import com.mrbysco.fivehead.ScaleUtil;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.layers.CustomHeadLayer;
 import net.minecraft.world.entity.EquipmentSlot;

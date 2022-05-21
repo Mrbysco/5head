@@ -18,7 +18,6 @@ public class BigBrainRecipe extends CustomRecipe {
 		super(location);
 	}
 
-
 	@Override
 	public boolean matches(CraftingContainer container, Level level) {
 		List<ItemStack> list = Lists.newArrayList();
@@ -67,6 +66,7 @@ public class BigBrainRecipe extends CustomRecipe {
 				ItemStack stackCopy = stack1.copy();
 				CompoundTag tag = stackCopy.getOrCreateTag();
 				tag.putFloat(FiveHead.SCALE_TAG, newSize);
+				stackCopy.setCount(1);
 				stackCopy.setTag(tag);
 
 				return stackCopy;
