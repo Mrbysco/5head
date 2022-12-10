@@ -14,7 +14,7 @@ public class TooltipHandler {
 	@SubscribeEvent
 	public void onItemPickup(ItemTooltipEvent event) {
 		ItemStack stack = event.getItemStack();
-		if (ScaleUtil.isSkullBlock(stack) && stack.hasTag() && !stack.getTag().isEmpty() && stack.getTag().contains(FiveHead.SCALE_TAG)) {
+		if (ScaleUtil.isSkullBlock(stack) && stack.getTag() != null && !stack.getTag().isEmpty() && stack.getTag().contains(FiveHead.SCALE_TAG)) {
 			CompoundTag tag = stack.getTag();
 			float scaleAddition = tag.getFloat(FiveHead.SCALE_TAG);
 			MutableComponent component = Component.translatable("fivehead.enlarged.tooltip", Math.round((scaleAddition * 100) * 1000.0) / 1000.0).withStyle(ChatFormatting.GOLD);
