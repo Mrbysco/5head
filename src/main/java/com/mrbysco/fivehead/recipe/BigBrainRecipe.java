@@ -28,7 +28,7 @@ public class BigBrainRecipe extends CustomRecipe {
 				list.add(itemstack);
 				if (list.size() > 1) {
 					ItemStack stack1 = list.get(0);
-					if (itemstack.getItem() != stack1.getItem() && !ScaleUtil.isSkullBlock(itemstack)) {
+					if (itemstack.getItem() != stack1.getItem() || !ScaleUtil.isSkullBlock(itemstack)) {
 						return false;
 					}
 				}
