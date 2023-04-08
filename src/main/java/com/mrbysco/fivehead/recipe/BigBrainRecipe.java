@@ -3,6 +3,7 @@ package com.mrbysco.fivehead.recipe;
 import com.google.common.collect.Lists;
 import com.mrbysco.fivehead.FiveHead;
 import com.mrbysco.fivehead.ScaleUtil;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.CraftingContainer;
@@ -40,7 +41,7 @@ public class BigBrainRecipe extends CustomRecipe {
 	}
 
 	@Override
-	public ItemStack assemble(CraftingContainer container) {
+	public ItemStack assemble(CraftingContainer container, RegistryAccess access) {
 		List<ItemStack> list = Lists.newArrayList();
 
 		for (int i = 0; i < container.getContainerSize(); ++i) {

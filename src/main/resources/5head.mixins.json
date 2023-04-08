@@ -8,9 +8,9 @@
   "mixins": [
   ],
   "client": [
-	"CustomHeadLayerMixin"
+    "CustomHeadLayerMixin"
   ],
   "injectors": {
-	"defaultRequire": 1
+    "defaultRequire": 1
   }
 }
