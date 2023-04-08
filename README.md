@@ -1,7 +1,5 @@
 [![build](https://github.com/Mrbysco/5head/actions/workflows/build.yml/badge.svg)](https://github.com/Mrbysco/5head/actions/workflows/build.yml) 
 [![](http://cf.way2muchnoise.eu/versions/625228.svg)](https://www.curseforge.com/minecraft/mc-mods/fivehead)
-[![](https://modrinth-utils.vercel.app/api/badge/versions?id=2n7aYFjU)](https://modrinth.com/mod/5head)
-
 
 # FiveHead #
 
