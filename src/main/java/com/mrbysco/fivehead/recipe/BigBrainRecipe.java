@@ -60,7 +60,7 @@ public class BigBrainRecipe extends CustomRecipe {
 		if (list.size() == 2) {
 			ItemStack stack1 = list.get(0);
 			ItemStack stack2 = list.get(1);
-			if (stack1.sameItem(stack2)) {
+			if (ItemStack.isSameItem(stack1, stack2)) {
 				float size1 = stack1.hasTag() ? stack1.getTag().getFloat(FiveHead.SCALE_TAG) : 0.03125F;
 				float size2 = stack2.hasTag() ? stack2.getTag().getFloat(FiveHead.SCALE_TAG) : 0.03125F;
 				float newSize = size1 + size2;

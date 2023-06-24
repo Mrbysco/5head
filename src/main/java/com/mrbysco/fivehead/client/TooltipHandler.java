@@ -17,8 +17,9 @@ public class TooltipHandler {
 		if (ScaleUtil.isSkullBlock(stack) && stack.getTag() != null && !stack.getTag().isEmpty() && stack.getTag().contains(FiveHead.SCALE_TAG)) {
 			CompoundTag tag = stack.getTag();
 			float scaleAddition = tag.getFloat(FiveHead.SCALE_TAG);
-			MutableComponent component = Component.translatable("fivehead.enlarged.tooltip", Math.round((scaleAddition * 100) * 1000.0) / 1000.0).withStyle(ChatFormatting.GOLD);
-			component.append(Component.translatable("fivehead.enlarged.tooltip2").withStyle(ChatFormatting.GOLD));
+			MutableComponent component = Component.translatable("fivehead.enlarged.tooltip",
+							Math.round((scaleAddition * 100) * 1000.0) / 1000.0).withStyle(ChatFormatting.GOLD)
+					.append(Component.translatable("fivehead.enlarged.tooltip2").withStyle(ChatFormatting.GOLD));
 			event.getToolTip().add(component);
 		}
 	}
