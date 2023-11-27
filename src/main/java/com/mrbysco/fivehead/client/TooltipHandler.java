@@ -1,14 +1,14 @@
 package com.mrbysco.fivehead.client;
 
 import com.mrbysco.fivehead.FiveHead;
-import com.mrbysco.fivehead.ScaleUtil;
+import com.mrbysco.fivehead.util.ScaleUtil;
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
+import net.neoforged.bus.api.SubscribeEvent;
 
 public class TooltipHandler {
 	@SubscribeEvent

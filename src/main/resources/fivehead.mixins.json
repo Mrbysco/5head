@@ -3,10 +3,7 @@
   "minVersion": "0.8.5",
   "compatibilityLevel": "JAVA_17",
   "package": "com.mrbysco.fivehead.mixin",
-  "refmap": "fivehead.refmap.json",
   "target": "@env(DEFAULT)",
-  "mixins": [
-  ],
   "client": [
     "CustomHeadLayerMixin"
   ],

@@ -2,10 +2,9 @@ package com.mrbysco.fivehead.recipe;
 
 import com.google.common.collect.Lists;
 import com.mrbysco.fivehead.FiveHead;
-import com.mrbysco.fivehead.ScaleUtil;
+import com.mrbysco.fivehead.util.ScaleUtil;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
@@ -16,8 +15,8 @@ import net.minecraft.world.level.Level;
 import java.util.List;
 
 public class BigBrainRecipe extends CustomRecipe {
-	public BigBrainRecipe(ResourceLocation location, CraftingBookCategory category) {
-		super(location, category);
+	public BigBrainRecipe(CraftingBookCategory category) {
+		super(category);
 	}
 
 	@Override

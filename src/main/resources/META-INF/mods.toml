@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[46,)"
+loaderVersion="[1,)"
 issueTrackerURL="https://github.com/Mrbysco/5head/issues"
 license="MIT"
 
@@ -7,7 +7,7 @@ license="MIT"
 modId="fivehead"
 version="${file.jarVersion}"
 displayName="5Head"
-displayURL="https://www.curseforge.com/minecraft/mc-mods/5head"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/fivehead"
 authors="Mrbysco"
 description='''
 A mod for big brain people
@@ -15,6 +15,14 @@ A mod for big brain people
 [[dependencies.fivehead]]
 modId="minecraft"
 mandatory=true
-versionRange="[1.20,1.21)"
+versionRange="[1.20.2,1.21)"
 ordering="NONE"
 side="BOTH"
+[[dependencies.fivehead]]
+modId="neoforge"
+mandatory=true
+versionRange="[20.2.64-beta,)"
+ordering="NONE"
+side="BOTH"
+[[mixins]]
+config = "fivehead.mixins.json"

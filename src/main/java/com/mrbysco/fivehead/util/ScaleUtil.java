@@ -1,4 +1,4 @@
-package com.mrbysco.fivehead;
+package com.mrbysco.fivehead.util;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
