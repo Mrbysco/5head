@@ -20,7 +20,6 @@ public class SmoothBrainConfig {
 		}
 	}
 
-
 	public static final ModConfigSpec clientSpec;
 	public static final Client CLIENT;
 

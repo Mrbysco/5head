@@ -8,7 +8,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig.Type;
-import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.NeoForge;
 import org.slf4j.Logger;
@@ -20,8 +19,7 @@ public class FiveHead {
 
 	public static final String SCALE_TAG = "FiveHeadScale";
 
-	public FiveHead() {
-		IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+	public FiveHead(IEventBus eventBus) {
 		ModLoadingContext.get().registerConfig(Type.CLIENT, SmoothBrainConfig.clientSpec);
 
 		SmartRecipes.RECIPE_SERIALIZERS.register(eventBus);
