@@ -1,0 +1,1 @@
+* Fix crafting recipe not enlarging the head
