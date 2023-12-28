@@ -1,1 +1,1 @@
-* Initial update to 1.19.4
+* Fix crafting recipe not enlarging the head
