@@ -1,1 +1,1 @@
-* Fix crafting heads together not enlarging the head
+* Initial update to 1.20.4
