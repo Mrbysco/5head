@@ -2,6 +2,7 @@ package com.mrbysco.fivehead.mixin;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mrbysco.fivehead.FiveHead;
+import com.mrbysco.fivehead.registry.SmartRegistry;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.layers.CustomHeadLayer;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -23,8 +24,8 @@ public class CustomHeadLayerMixin<T extends LivingEntity> {
 					ordinal = 0))
 	public void fiveheadRender(PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, T livingEntity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, CallbackInfo ci) {
 		final ItemStack itemstack = livingEntity.getItemBySlot(EquipmentSlot.HEAD);
-		if (itemstack.hasTag() && itemstack.getTag().contains(FiveHead.SCALE_TAG)) {
-			final float scale = itemstack.getTag().getFloat(FiveHead.SCALE_TAG);
+		if (itemstack.has(SmartRegistry.SIZE_TYPE.get())) {
+			final float scale = itemstack.getOrDefault(SmartRegistry.SIZE_TYPE.get(), 0.03125F);
 			if (scale > 0) {
 				final float newScale = scale + 1;
 				poseStack.translate(-scale / 2, 0, -scale / 2);

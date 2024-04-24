@@ -1,10 +1,9 @@
 package com.mrbysco.fivehead.recipe;
 
 import com.google.common.collect.Lists;
-import com.mrbysco.fivehead.FiveHead;
+import com.mrbysco.fivehead.registry.SmartRegistry;
 import com.mrbysco.fivehead.util.ScaleUtil;
-import net.minecraft.core.RegistryAccess;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
@@ -40,7 +39,7 @@ public class BigBrainRecipe extends CustomRecipe {
 	}
 
 	@Override
-	public ItemStack assemble(CraftingContainer container, RegistryAccess access) {
+	public ItemStack assemble(CraftingContainer container, HolderLookup.Provider provider) {
 		List<ItemStack> list = Lists.newArrayList();
 
 		for (int i = 0; i < container.getContainerSize(); ++i) {
@@ -60,15 +59,13 @@ public class BigBrainRecipe extends CustomRecipe {
 			ItemStack stack1 = list.get(0);
 			ItemStack stack2 = list.get(1);
 			if (ItemStack.isSameItem(stack1, stack2)) {
-				float size1 = stack1.hasTag() && stack1.getTag().contains(FiveHead.SCALE_TAG) ? stack1.getTag().getFloat(FiveHead.SCALE_TAG) : 0.03125F;
-				float size2 = stack2.hasTag() && stack2.getTag().contains(FiveHead.SCALE_TAG) ? stack2.getTag().getFloat(FiveHead.SCALE_TAG) : 0.03125F;
+				float size1 = stack1.getOrDefault(SmartRegistry.SIZE_TYPE.get(), 0.3125F);
+				float size2 = stack2.getOrDefault(SmartRegistry.SIZE_TYPE.get(), 0.3125F);
 				float newSize = size1 + size2;
 
 				ItemStack stackCopy = stack1.copy();
-				CompoundTag tag = stackCopy.getOrCreateTag();
-				tag.putFloat(FiveHead.SCALE_TAG, newSize);
 				stackCopy.setCount(1);
-				stackCopy.setTag(tag);
+				stackCopy.set(SmartRegistry.SIZE_TYPE.get(), newSize);
 
 				return stackCopy;
 			}
