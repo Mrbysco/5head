@@ -1,7 +1,6 @@
 package com.mrbysco.fivehead.mixin;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mrbysco.fivehead.FiveHead;
 import com.mrbysco.fivehead.registry.SmartRegistry;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.layers.CustomHeadLayer;

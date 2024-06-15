@@ -4,9 +4,9 @@ import com.google.common.collect.Lists;
 import com.mrbysco.fivehead.registry.SmartRegistry;
 import com.mrbysco.fivehead.util.ScaleUtil;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
+import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
@@ -19,11 +19,11 @@ public class BigBrainRecipe extends CustomRecipe {
 	}
 
 	@Override
-	public boolean matches(CraftingContainer container, Level level) {
+	public boolean matches(CraftingInput craftingInput, Level level) {
 		List<ItemStack> list = Lists.newArrayList();
 
-		for (int i = 0; i < container.getContainerSize(); ++i) {
-			ItemStack itemstack = container.getItem(i);
+		for (int i = 0; i < craftingInput.size(); ++i) {
+			ItemStack itemstack = craftingInput.getItem(i);
 			if (!itemstack.isEmpty()) {
 				list.add(itemstack);
 				if (list.size() > 1) {
@@ -39,11 +39,11 @@ public class BigBrainRecipe extends CustomRecipe {
 	}
 
 	@Override
-	public ItemStack assemble(CraftingContainer container, HolderLookup.Provider provider) {
+	public ItemStack assemble(CraftingInput craftingInput, HolderLookup.Provider provider) {
 		List<ItemStack> list = Lists.newArrayList();
 
-		for (int i = 0; i < container.getContainerSize(); ++i) {
-			ItemStack itemstack = container.getItem(i);
+		for (int i = 0; i < craftingInput.size(); ++i) {
+			ItemStack itemstack = craftingInput.getItem(i);
 			if (!itemstack.isEmpty()) {
 				list.add(itemstack);
 				if (list.size() > 1) {

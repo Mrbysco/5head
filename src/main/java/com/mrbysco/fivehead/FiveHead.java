@@ -19,12 +19,11 @@ public class FiveHead {
 	public static final Logger LOGGER = LogUtils.getLogger();
 
 	public FiveHead(IEventBus eventBus, Dist dist, ModContainer container) {
-		container.registerConfig(Type.CLIENT, SmoothBrainConfig.clientSpec);
-
 		SmartRegistry.DATA_COMPONENT_TYPES.register(eventBus);
 		SmartRecipes.RECIPE_SERIALIZERS.register(eventBus);
 
 		if (dist.isClient()) {
+			container.registerConfig(Type.CLIENT, SmoothBrainConfig.clientSpec);
 			NeoForge.EVENT_BUS.register(new TooltipHandler());
 		}
 	}
