@@ -59,8 +59,8 @@ public class BigBrainRecipe extends CustomRecipe {
 			ItemStack stack1 = list.get(0);
 			ItemStack stack2 = list.get(1);
 			if (ItemStack.isSameItem(stack1, stack2)) {
-				float size1 = stack1.getOrDefault(SmartRegistry.SIZE_TYPE.get(), 0.3125F);
-				float size2 = stack2.getOrDefault(SmartRegistry.SIZE_TYPE.get(), 0.3125F);
+				float size1 = stack1.getOrDefault(SmartRegistry.SIZE_TYPE.get(), 0.03125F);
+				float size2 = stack2.getOrDefault(SmartRegistry.SIZE_TYPE.get(), 0.03125F);
 				float newSize = size1 + size2;
 
 				ItemStack stackCopy = stack1.copy();
