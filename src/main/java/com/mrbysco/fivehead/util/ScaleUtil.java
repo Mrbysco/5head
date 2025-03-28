@@ -6,6 +6,7 @@ import net.minecraft.world.level.block.SkullBlock;
 
 public class ScaleUtil {
 	public static boolean isSkullBlock(ItemStack stack) {
-		return stack.getItem() instanceof BlockItem blockItem && blockItem.getBlock() instanceof SkullBlock;
+		return stack.getItem() instanceof BlockItem blockItem &&
+				blockItem.getBlock() instanceof SkullBlock;
 	}
 }
