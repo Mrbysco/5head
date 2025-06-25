@@ -10,6 +10,7 @@ import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class BigBrainRecipe extends CustomRecipe {
 	}
 
 	@Override
-	public boolean matches(CraftingInput craftingInput, Level level) {
+	public boolean matches(CraftingInput craftingInput, @NotNull Level level) {
 		List<ItemStack> list = Lists.newArrayList();
 
 		for (int i = 0; i < craftingInput.size(); ++i) {
@@ -27,7 +28,7 @@ public class BigBrainRecipe extends CustomRecipe {
 			if (!itemstack.isEmpty()) {
 				list.add(itemstack);
 				if (list.size() > 1) {
-					ItemStack stack1 = list.get(0);
+					ItemStack stack1 = list.getFirst();
 					if (itemstack.getItem() != stack1.getItem() || !ScaleUtil.isSkullBlock(itemstack)) {
 						return false;
 					}
@@ -38,8 +39,9 @@ public class BigBrainRecipe extends CustomRecipe {
 		return list.size() == 2;
 	}
 
+	@NotNull
 	@Override
-	public ItemStack assemble(CraftingInput craftingInput, HolderLookup.Provider provider) {
+	public ItemStack assemble(CraftingInput craftingInput, @NotNull HolderLookup.Provider provider) {
 		List<ItemStack> list = Lists.newArrayList();
 
 		for (int i = 0; i < craftingInput.size(); ++i) {
@@ -74,6 +76,7 @@ public class BigBrainRecipe extends CustomRecipe {
 		return ItemStack.EMPTY;
 	}
 
+	@NotNull
 	@Override
 	public RecipeSerializer<BigBrainRecipe> getSerializer() {
 		return SmartRecipes.BIG_BRAIN_SERIALIZER.get();
