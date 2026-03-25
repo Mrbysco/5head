@@ -4,7 +4,7 @@ import com.google.common.reflect.TypeToken;
 import com.mrbysco.fivehead.FiveHead;
 import com.mrbysco.fivehead.registry.SmartRegistry;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.context.ContextKey;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
@@ -12,7 +12,7 @@ import net.neoforged.neoforge.client.renderstate.RegisterRenderStateModifiersEve
 
 public class ClientHandler {
 	public static final ContextKey<Float> HEAD_SCALE = new ContextKey<>(
-			ResourceLocation.fromNamespaceAndPath(FiveHead.MOD_ID, "head_scale"));
+			Identifier.fromNamespaceAndPath(FiveHead.MOD_ID, "head_scale"));
 
 	public static void registerCustomRenderData(RegisterRenderStateModifiersEvent event) {
 		event.registerEntityModifier(new TypeToken<LivingEntityRenderer<?, ?, ?>>() {
