@@ -1,11 +1,12 @@
 package com.mrbysco.fivehead.recipe;
 
 import com.google.common.collect.Lists;
+import com.mojang.serialization.MapCodec;
 import com.mrbysco.fivehead.registry.SmartRegistry;
 import com.mrbysco.fivehead.util.ScaleUtil;
-import net.minecraft.core.HolderLookup;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -15,8 +16,13 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class BigBrainRecipe extends CustomRecipe {
-	public BigBrainRecipe(CraftingBookCategory category) {
-		super(category);
+	public static final BigBrainRecipe INSTANCE = new BigBrainRecipe();
+	public static final MapCodec<BigBrainRecipe> MAP_CODEC = MapCodec.unit(INSTANCE);
+	public static final StreamCodec<RegistryFriendlyByteBuf, BigBrainRecipe> STREAM_CODEC = StreamCodec.unit(INSTANCE);
+	public static final RecipeSerializer<BigBrainRecipe> SERIALIZER = new RecipeSerializer<>(MAP_CODEC, STREAM_CODEC);
+
+	public BigBrainRecipe() {
+		super();
 	}
 
 	@Override
@@ -41,7 +47,7 @@ public class BigBrainRecipe extends CustomRecipe {
 
 	@NotNull
 	@Override
-	public ItemStack assemble(CraftingInput craftingInput, @NotNull HolderLookup.Provider provider) {
+	public ItemStack assemble(CraftingInput craftingInput) {
 		List<ItemStack> list = Lists.newArrayList();
 
 		for (int i = 0; i < craftingInput.size(); ++i) {
