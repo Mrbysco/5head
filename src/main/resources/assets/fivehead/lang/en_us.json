@@ -1,4 +1,6 @@
 {
   "fivehead.enlarged.tooltip": "Enlarged by %s",
-  "fivehead.enlarged.tooltip2": "%"
+  "fivehead.enlarged.tooltip2": "%",
+  "fivehead.configuration.showPercentage": "Show Percentage",
+  "fivehead.configuration.client": "Client Settings"
 }

@@ -8,12 +8,17 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.util.context.ContextKey;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.renderstate.RegisterRenderStateModifiersEvent;
 
+@EventBusSubscriber(Dist.CLIENT)
 public class ClientHandler {
 	public static final ContextKey<Float> HEAD_SCALE = new ContextKey<>(
 			Identifier.fromNamespaceAndPath(FiveHead.MOD_ID, "head_scale"));
 
+	@SubscribeEvent
 	public static void registerCustomRenderData(RegisterRenderStateModifiersEvent event) {
 		event.registerEntityModifier(new TypeToken<LivingEntityRenderer<?, ?, ?>>() {
 		}, (living, state) -> {
