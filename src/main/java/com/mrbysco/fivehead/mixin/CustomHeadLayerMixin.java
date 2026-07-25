@@ -21,8 +21,8 @@ public class CustomHeadLayerMixin<S extends LivingEntityRenderState> {
 					ordinal = 0
 			)
 	)
-	public void fiveheadRender(PoseStack poseStack, SubmitNodeCollector nodeCollector, int packedLight, S renderState,
+	public void fiveheadRender(PoseStack poseStack, SubmitNodeCollector submitNodeCollector, int lightCoords, S state,
 	                           float yRot, float xRot, CallbackInfo ci) {
-		HeadHandler.resizeSkull(renderState, poseStack);
+		HeadHandler.resizeSkull(state, poseStack);
 	}
 }
